@@ -1,24 +1,12 @@
 package ie.tudublin;
 
-import javax.swing.text.TableView.TableRow;
-
 public class Note {
     private char note;
     private int duration;
 
-
-    public Star()
+    public Note()
     {
 
-    }
-
-    public Note(TableRow row)
-    {
-        //constructor chaining
-        this(
-            row.getChar("Note"),
-            row.getInt("Duration")
-        );
     }
 
     //constructors
@@ -26,8 +14,6 @@ public class Note {
         this.note = note;
         this.duration = duration;
     }
-
-    
 
     public char getNote() {
         return note;
@@ -47,7 +33,23 @@ public class Note {
 
     @Override
     public String toString() {
-        return "Note [duration=" + duration + ", note=" + note + "]";
-    }
+        //return "Note [duration=" + duration + ", note=" + note + "]";
+        if(duration == 1 )
+        {
+            return note + "   " + duration+ "   Quaver"  ; 
+        }
+        else
+        {
+            return note + "   " + duration + "   Crotchet"  ;
 
+        }
+        
+    }
 }
+
+    
+
+
+
+
+ 
