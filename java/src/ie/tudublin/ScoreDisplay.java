@@ -20,11 +20,12 @@ public class ScoreDisplay extends PApplet
 
 	float border;
 	float gap = 25.0f;
-	float start;
-	float end;
 	Minim m;
 	Oscil o;
 	AudioOutput ap;
+
+	float cx;
+	float cy;
 	
 	
 	public void settings()
@@ -32,6 +33,10 @@ public class ScoreDisplay extends PApplet
 		size(1000, 500);
 	}
 
+	public void mouseHover()
+	{
+		
+	}
 	// How to convert a character to a number
 	char c = '7'; // c holds the character 7 (55)
 	int i = c - '0'; // i holds the number 7 (55 - 48) 
@@ -123,6 +128,7 @@ public class ScoreDisplay extends PApplet
 				line((border +(gap / 2)) + (gap * noteSpace), (gap * 12) + gap / 2, (border + (gap / 2)) + (gap * noteSpace), (gap * 9) + gap);
 				line((border + (gap / 2)) + (gap * noteSpace), (gap * 9) + gap, (border + gap) + (gap * noteSpace), (gap * 9) + gap * 1.5f);
 				noteSpace = noteSpace + 1.8F;
+				
 			}	
 
 			if(letter == 'E')
