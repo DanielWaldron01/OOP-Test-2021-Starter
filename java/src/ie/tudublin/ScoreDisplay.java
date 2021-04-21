@@ -97,6 +97,7 @@ public class ScoreDisplay extends PApplet
 		line(border, gap * 10, border * 9, gap * 10);
 		line(border, gap * 11, border * 9, gap * 11);
 		line(border, gap * 12, border * 9, gap * 12);
+		
 		drawNotes();
 		fill(0);
 	
@@ -105,15 +106,82 @@ public class ScoreDisplay extends PApplet
 	void drawNotes()
 	{
 		float border = 0.1f * width;
-	
+		
+		Float noteSpace = 0f;
 
 		for(Note n: notes)
 		{
-			println(n);
-		}
-		circle(border + gap, (gap * 12) + gap / 2, 25);
+			String GrabNote = n.toString();
+			char letter = GrabNote.charAt(0);
+			
 
-		circle(border + (gap * 3), (gap * 12), 25);
+			if(letter == 'D')
+			{
+				textAlign(CENTER, CENTER);
+				text("D", border + (gap * noteSpace + 0.5f), gap * 6);
+				circle(border + (gap * noteSpace ), (gap * 12) + gap / 2, 25);
+				line((border +(gap / 2)) + (gap * noteSpace), (gap * 12) + gap / 2, (border + (gap / 2)) + (gap * noteSpace), (gap * 9) + gap);
+				line((border + (gap / 2)) + (gap * noteSpace), (gap * 9) + gap, (border + gap) + (gap * noteSpace), (gap * 9) + gap * 1.5f);
+				noteSpace = noteSpace + 1.8F;
+			}	
+
+			if(letter == 'E')
+			{
+				text("E", border + (gap * noteSpace + 0.5f), gap * 6);
+				circle(border + (gap * noteSpace ), (gap * 11) + gap, 25);
+				line((border +(gap / 2)) + (gap * noteSpace), (gap * 11) + gap, (border + (gap / 2)) + (gap * noteSpace), (gap * 9) + gap / 2);
+				line((border +(gap / 2)) + (gap * noteSpace), (gap * 9) + gap / 2, (border + gap) + (gap * noteSpace), gap * 10);
+				noteSpace = noteSpace + 1.8F;
+			}
+
+			if(letter == 'F')
+			{
+				text("F", border + (gap * noteSpace + 0.5f), gap * 6);
+				circle(border + (gap * noteSpace ), (gap * 11) + gap / 2, 25);
+				line((border +(gap / 2)) + (gap * noteSpace), (gap * 10) + gap * 1.5f, (border + (gap / 2)) + (gap * noteSpace), gap * 9);
+				noteSpace = noteSpace + 1.8F;
+			}
+
+			if(letter == 'G')
+			{
+				text("G", border + (gap * noteSpace + 0.5f), gap * 6);
+				circle(border + (gap * noteSpace ), (gap * 10) + gap, 25);
+				noteSpace = noteSpace + 1.8F;
+			}
+
+			if(letter == 'A')
+			{
+				text("A", border + (gap * noteSpace + 0.5f), gap * 6);
+				circle(border + (gap * noteSpace ), (gap * 10) + gap / 2, 25);
+				line((border +(gap / 2)) + (gap * noteSpace), (gap * 8) + gap * 2.5f, (border + (gap / 2)) + (gap * noteSpace), gap * 8);
+				noteSpace = noteSpace + 1.8F;
+			}
+
+			if(letter == 'B')
+			{
+				text("B", border + (gap * noteSpace + 0.5f), gap * 6);
+				circle(border + (gap * noteSpace ), (gap * 9) + gap, 25);
+				line((border +(gap / 2)) + (gap * noteSpace), (gap * 8) + gap * 2, (border + (gap / 2)) + (gap * noteSpace), gap * 8 - gap / 2);
+				noteSpace = noteSpace + 1.8F;
+			}
+
+			if(letter == 'c')
+			{
+				text("c", border + (gap * noteSpace + 0.5f), gap * 6);
+				circle(border + (gap * noteSpace ), (gap * 9) + gap / 2, 25);
+				noteSpace = noteSpace + 1.8F;
+			}
+		
+			if(letter == 'd')
+			{
+				text("d", border + (gap * noteSpace + 0.5f), gap * 6);
+				circle(border + (gap * noteSpace ), (gap * 8) + gap, 25);
+				noteSpace = noteSpace + 1.8F;
+			}}
+
+		
+		
+		
 
 	
 		
